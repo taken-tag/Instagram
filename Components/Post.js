@@ -4,7 +4,7 @@ import { addDoc, setDoc, collection, onSnapshot, orderBy, query, serverTimestamp
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import { db } from "../firebase";
-import Moment from "Moment";
+
 function Post({id, username, userImg, img, caption}) {
     const {data: session} = useSession();
     const [comment, setComment] = useState("");
@@ -102,9 +102,7 @@ console.log(hasLiked);
                           <span className="font-bold">{comment.data().username}</span>{" "}
                           {comment.data().comment}
                           </p>
-                          {/* <Moment  fromNow className="pr-5 text-xs" >
-                               {comment.data().timestamp?.toDate()}
-                          </Moment> */}
+                        
                       </div>
                   </>))}
               </div>
